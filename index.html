@@ -3,40 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outfit 306 | BSP - Dueñas General Comprehensive High School</title>
+    <title>Outfit 306 | Modern Scouting Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">
-            <h1>⚜️ Outfit 306</h1>
-            <p>Boy Scouts of the Philippines</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-fleur-de-lis"></i>
+                <div class="logo-text">
+                    <span class="logo-title">Outfit 306</span>
+                    <span class="logo-sub">BSP · DGCHS</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="announcements.html">Announcements</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="members.html" class="nav-cta">Members Area</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="leadership.html">Leadership</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="announcements.html">Announcements</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="members.html" class="member-btn">Members Area</a></li>
-        </ul>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-content">
-            <h2>Outfit 306</h2>
-            <h3>Boy Scouts of the Philippines</h3>
-            <p>Dueñas General Comprehensive High School</p>
-            <p class="tagline">"Building leadership, discipline, and service in the community."</p>
-            <div class="hero-buttons">
-                <a href="activities.html" class="btn btn-primary">Upcoming Events</a>
-                <a href="contact.html" class="btn btn-secondary">Contact Officers</a>
+        <div class="hero-bg"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">Est. 2010</div>
+                <h1 class="hero-title">Building Tomorrow's<br><span class="highlight">Leaders Today</span></h1>
+                <p class="hero-description">Outfit 306 - Boy Scouts of the Philippines at Dueñas General Comprehensive High School. Developing character, leadership, and service excellence since 2010.</p>
+                <div class="hero-buttons">
+                    <a href="activities.html" class="btn btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    <a href="about.html" class="btn btn-outline">Learn More <i class="fas fa-play"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Active Scouts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Eagle Scouts</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="placeholder-hero">
+                    <i class="fas fa-fleur-de-lis"></i>
+                    <p>Scout Leadership Image</p>
+                </div>
             </div>
         </div>
     </header>
@@ -44,47 +77,146 @@
     <!-- Scout Oath Section -->
     <section class="oath-section">
         <div class="container">
-            <h2>The Scout Oath</h2>
-            <div class="oath-box">
-                <p class="oath-text">"On my honor, I will do my best<br>
-                To do my duty to God and my country, the Republic of the Philippines,<br>
-                and to obey the Scout Law;<br>
-                To help other people at all times;<br>
-                To keep myself physically strong, mentally awake, and morally straight."</p>
+            <div class="oath-card">
+                <i class="fas fa-quote-left"></i>
+                <h3>The Scout Oath</h3>
+                <p>"On my honor, I will do my best to do my duty to God and my country, the Republic of the Philippines, and to obey the Scout Law; to help other people at all times; to keep myself physically strong, mentally awake, and morally straight."</p>
+                <div class="oath-footer">
+                    <i class="fas fa-fleur-de-lis"></i>
+                    <span>Laging Handa · Always Ready</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Stats -->
-    <section class="stats">
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <div class="stat-box">
-                <h3>50+</h3>
-                <p>Active Scouts</p>
+            <div class="section-header">
+                <span class="section-tag">Core Values</span>
+                <h2>What We Stand For</h2>
+                <p>The principles that guide every scout in Outfit 306</p>
             </div>
-            <div class="stat-box">
-                <h3>15+</h3>
-                <p>Eagle Scouts</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-crown"></i></div>
+                    <h3>Leadership</h3>
+                    <p>Developing confident leaders who guide with integrity and inspire others to achieve their best.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3>Discipline</h3>
+                    <p>Instilling self-discipline and responsibility through structured training and mentorship.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Service</h3>
+                    <p>Committing to community service and helping others whenever and wherever needed.</p>
+                </div>
             </div>
-            <div class="stat-box">
-                <h3>20+</h3>
-                <p>Community Projects</p>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Preview -->
+    <section class="events-preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Stay Updated</span>
+                <h2>Upcoming Events</h2>
+                <p>Join us in these exciting activities</p>
             </div>
-            <div class="stat-box">
-                <h3>10+</h3>
-                <p>Years of Excellence</p>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15-17</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>District Camporee 2026</h3>
+                        <p><i class="fas fa-location-dot"></i> Iloilo Scout Campground</p>
+                        <a href="activities.html" class="event-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">MAR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Community Clean-Up Drive</h3>
+                        <p><i class="fas fa-location-dot"></i> Barangay Dueñas</p>
+                        <a href="activities.html" class="event-link">Learn More →</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">10</span>
+                        <span class="month">APR</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Summer Camp Registration</h3>
+                        <p><i class="fas fa-location-dot"></i> Deadline: April 10</p>
+                        <a href="activities.html" class="event-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join the Scouting Family?</h2>
+                <p>Be part of Outfit 306 and start your journey to becoming a responsible leader.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us Today <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>⚜️ Outfit 306 - Boy Scouts of the Philippines | Dueñas General Comprehensive High School</p>
-            <p>Follow us: <a href="#">Facebook</a> | <a href="#">Email</a></p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <i class="fas fa-fleur-de-lis"></i>
+                    <h3>Outfit 306</h3>
+                    <p>Boy Scouts of the Philippines<br>Dueñas General Comprehensive High School</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="activities.html">Activities</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="resources.html">Scout Manuals</a></li>
+                        <li><a href="resources.html">Uniform Guide</a></li>
+                        <li><a href="resources.html">Merit Badges</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <p class="footer-email"><i class="fas fa-envelope"></i> outfit306.dgchs@bsp.ph</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Outfit 306 - Boy Scouts of the Philippines. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
 </body>
-                  </html>
+</html>
