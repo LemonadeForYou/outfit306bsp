@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Outfit 306BSP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background-color: var(--scout-green); color: var(--white); padding: 4rem 5%; text-align: center; }
+        .page-header h1 { font-size: 3rem; color: var(--scout-gold); }
+        
+        .join-container { max-width: 800px; margin: 0 auto; background: var(--white); padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--scout-green); }
+        input, select { width: 100%; padding: 0.8rem; border: 1px solid #d6cdb8; border-radius: 6px; font-family: 'DM Sans', sans-serif; }
+        
+        .submit-btn { width: 100%; background: var(--scout-green); color: var(--scout-gold); border: none; padding: 1rem; font-size: 1.1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background 0.3s; }
+        .submit-btn:hover { background: #112a1d; }
+
+        .requirements { margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--scout-cream); }
+        .requirements ul { list-style: none; }
+        .requirements li { margin-bottom: 0.5rem; padding-left: 1.5rem; position: relative; }
+        .requirements li::before { content: '⚜️'; position: absolute; left: 0; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Outfit 306BSP</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Join the Family</h1>
+        <p>Develop leadership, learn survival skills, and make lifelong friends.</p>
+    </div>
+
+    <section>
+        <div class="join-container">
+            <h2 style="color: var(--scout-green); margin-bottom: 1.5rem;">Registration Form</h2>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="student-name">Student Full Name</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade-level">Grade Level</label>
+                    <select id="grade-level" required>
+                        <option value="">Select Grade</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent / Guardian Name</label>
+                    <input type="text" id="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-number">Contact Number</label>
+                    <input type="tel" id="contact-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+
+            <div class="requirements">
+                <h3 style="color: var(--scout-green); margin-bottom: 1rem;">Requirements Checklist</h3>
+                <ul>
+                    <li>Must be currently enrolled at Duenas GCHS</li>
+                    <li>Signed Parent's Consent Form</li>
+                    <li>Photocopy of Birth Certificate</li>
+                    <li>1x1 ID Picture (2 pieces)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Outfit 306BSP. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
