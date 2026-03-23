@@ -49,10 +49,18 @@ body.dark .officer-card,
 body.dark .announcement-card,
 body.dark .resource-card,
 body.dark .contact-card,
-body.dark .leaderboard-card {
+body.dark .leaderboard-card,
+body.dark .attendance-table,
+body.dark .event-item,
+body.dark .form-card {
   background: rgba(31, 41, 55, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .attendance-table td,
+body.dark .attendance-table th {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .container {
@@ -168,17 +176,21 @@ body.dark .navbar {
   transform: translateY(-2px);
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SECTION - FIXED TO TOP, NOT FULL SCREEN ===== */
 .hero {
-  min-height: 85vh;
+  min-height: auto;
+  padding: 4rem 0 5rem 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   color: white;
+  background-size: cover;
+  background-position: center;
 }
 
 .hero-content {
   max-width: 800px;
+  margin-top: 1rem;
   animation: fadeUp 0.8s ease-out;
 }
 
@@ -228,11 +240,15 @@ body.dark .navbar {
 }
 
 /* Features Grid */
+.features {
+  padding: 4rem 0;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
 .feature-card {
@@ -257,12 +273,15 @@ body.dark .navbar {
 }
 
 /* Activity Cards */
+.preview-activities {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
 .activity-cards-grid,
 .officers-grid,
 .gallery-grid,
-.announcements-list,
-.resources-grid,
-.members-dashboard {
+.resources-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
@@ -296,19 +315,62 @@ body.dark .navbar {
   padding: 1.5rem;
 }
 
-/* Officers */
+.card-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Officers Preview */
+.officers-preview {
+  padding: 4rem 0;
+}
+
+.preview-officers-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.officer-mini-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  min-width: 180px;
+  transition: var(--transition);
+}
+
+.officer-mini-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.officer-avatar {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Officers Page */
+.officers-section {
+  padding: 4rem 0;
+}
+
 .officer-card {
   text-align: center;
   padding: 2rem;
 }
 
-.officer-avatar {
-  font-size: 5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
+/* Gallery Grid */
+.gallery-section {
+  padding: 4rem 0;
 }
 
-/* Gallery Grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -346,6 +408,7 @@ body.dark .navbar {
   z-index: 2000;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .lightbox.active {
@@ -358,21 +421,32 @@ body.dark .navbar {
   border-radius: var(--radius);
 }
 
-/* Announcements Timeline */
+/* Announcements */
+.announcements-section {
+  padding: 4rem 0;
+}
+
 .announcements-list {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .announcement-card {
   display: flex;
   gap: 1rem;
   padding: 1.5rem;
-  align-items: flex-start;
+  background: var(--white);
+  border-radius: var(--radius);
+  transition: var(--transition);
 }
 
-.announcement-date {
+.announcement-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.date-badge {
   background: var(--primary);
   color: white;
   padding: 0.5rem 1rem;
@@ -381,12 +455,104 @@ body.dark .navbar {
   min-width: 80px;
 }
 
+/* Events */
+.upcoming-events {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-item {
+  display: flex;
+  gap: 1rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  align-items: center;
+  flex-wrap: wrap;
+  transition: var(--transition);
+}
+
+.event-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.event-date {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Resources */
+.resources-section {
+  padding: 4rem 0;
+}
+
+.resource-card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.resource-card li {
+  margin: 0.75rem 0;
+}
+
+.resource-card a {
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact-section {
+  padding: 4rem 0;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.form-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
 /* Members Dashboard */
+.dashboard-section {
+  padding: 4rem 0;
+}
+
 .dashboard-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .stat-card {
@@ -395,6 +561,24 @@ body.dark .navbar {
   padding: 1.5rem;
   border-radius: var(--radius);
   text-align: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.attendance-section,
+.leaderboard-section {
+  margin-bottom: 3rem;
+}
+
+.attendance-section h2,
+.leaderboard-section h2 {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .attendance-table {
@@ -412,6 +596,124 @@ body.dark .navbar {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.attendance-table th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.leaderboard-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.leaderboard-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Page Headers */
+.page-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Motto Section */
+.motto-section {
+  margin: -2rem auto 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.motto-card {
+  text-align: center;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.motto-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.motto-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
+}
+
+/* About Page */
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.oath-box {
+  background: var(--gray-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.law-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.law-item {
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.law-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
 /* Footer */
 .footer {
   background: var(--gray-dark);
@@ -424,15 +726,51 @@ body.dark .navbar {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer a {
   color: #ccc;
   text-decoration: none;
+  transition: var(--transition);
 }
 
 .footer a:hover {
   color: var(--secondary);
+}
+
+.footer-links ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 2rem;
 }
 
 /* Animations */
@@ -451,7 +789,7 @@ body.dark .navbar {
   animation: fadeUp 0.6s ease-out forwards;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -482,6 +820,10 @@ body.dark .navbar {
     font-size: 2rem;
   }
   
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
   .section-header h2 {
     font-size: 1.75rem;
   }
@@ -489,27 +831,35 @@ body.dark .navbar {
   .container {
     padding: 0 1rem;
   }
-}
-
-/* Glassmorphism */
-.glass-card {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius);
-  padding: 2rem;
-}
-
-.motto-section {
-  margin: -3rem auto 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.motto-card {
-  text-align: center;
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  max-width: 600px;
-  margin: 0 auto;
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero {
+    padding: 2rem 0 3rem 0;
+  }
+  
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .announcement-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .date-badge {
+    align-self: center;
+  }
+  
+  .preview-officers-grid {
+    gap: 1rem;
+  }
+  
+  .officer-mini-card {
+    min-width: 150px;
+  }
 }
