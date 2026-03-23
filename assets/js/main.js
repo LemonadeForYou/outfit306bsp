@@ -2,92 +2,24 @@
 const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
-// Color Picker Elements
-const colorPickerBtn = document.getElementById('colorPickerBtn');
-const colorPickerDropdown = document.getElementById('colorPickerDropdown');
-const colorOptions = document.querySelectorAll('.color-option');
-
-// Color themes with their RGB values
-const colorThemes = {
-  green: { primary: '#1e6f3f', primaryDark: '#0f4a2a', primaryLight: '#2d8a4f', rgb: '30, 111, 63' },
-  blue: { primary: '#1e6f9f', primaryDark: '#0f4a6e', primaryLight: '#2d8abf', rgb: '30, 111, 159' },
-  red: { primary: '#c73d2f', primaryDark: '#9b2c1f', primaryLight: '#dc5a4a', rgb: '199, 61, 47' },
-  purple: { primary: '#7c3aed', primaryDark: '#5b21b6', primaryLight: '#9b6bff', rgb: '124, 58, 237' },
-  orange: { primary: '#ea580c', primaryDark: '#c2410c', primaryLight: '#f97316', rgb: '234, 88, 12' }
-};
-
 // Check for saved theme
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark');
-  darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-} else {
-  darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
 
-// Check for saved color theme
-const savedColor = localStorage.getItem('colorTheme') || 'green';
-applyColorTheme(savedColor);
-
-// Dark Mode Toggle
-darkModeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  if (body.classList.contains('dark')) {
-    localStorage.setItem('theme', 'dark');
-    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-  } else {
-    localStorage.setItem('theme', 'light');
-    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-  }
-});
-
-// Color Picker Dropdown Toggle
-colorPickerBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  colorPickerDropdown.classList.toggle('active');
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-  if (!colorPickerBtn.contains(e.target) && !colorPickerDropdown.contains(e.target)) {
-    colorPickerDropdown.classList.remove('active');
-  }
-});
-
-// Apply color theme
-function applyColorTheme(color) {
-  const theme = colorThemes[color];
-  if (!theme) return;
-  
-  document.documentElement.style.setProperty('--primary', theme.primary);
-  document.documentElement.style.setProperty('--primary-dark', theme.primaryDark);
-  document.documentElement.style.setProperty('--primary-light', theme.primaryLight);
-  document.documentElement.style.setProperty('--primary-rgb', theme.rgb);
-  
-  // Update hero overlay
-  const heroOverlay = document.querySelector('.hero-overlay');
-  if (heroOverlay) {
-    heroOverlay.style.background = `linear-gradient(135deg, rgba(${theme.rgb}, 0.7), rgba(0,0,0,0.4))`;
-  }
-  
-  // Update section tags and badges
-  const sectionTags = document.querySelectorAll('.section-tag, .hero-badge');
-  sectionTags.forEach(tag => {
-    if (!tag.classList.contains('hero-badge') || tag.classList.contains('hero-badge')) {
-      tag.style.backgroundColor = theme.primary;
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    if (body.classList.contains('dark')) {
+      localStorage.setItem('theme', 'dark');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      localStorage.setItem('theme', 'light');
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
     }
   });
-  
-  localStorage.setItem('colorTheme', color);
 }
-
-// Color option click handlers
-colorOptions.forEach(option => {
-  option.addEventListener('click', () => {
-    const color = option.dataset.color;
-    applyColorTheme(color);
-    colorPickerDropdown.classList.remove('active');
-  });
-});
 
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
@@ -125,7 +57,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('.feature-card, .activity-preview-card, .officer-mini-card').forEach(el => {
+document.querySelectorAll('.feature-card, .activity-preview-card, .officer-card, .announcement-card, .resource-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'all 0.6s ease-out';
@@ -147,19 +79,11 @@ function initLightbox() {
       });
     });
     
-    if (lightbox) {
-      lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-      });
-    }
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
   }
 }
-
-// Loading animation
-window.addEventListener('load', () => {
-  initLightbox();
-  console.log('Outfit 306 website loaded — Laging Handa!');
-});
 
 // Attendance table data simulation (for members page)
 function loadAttendanceData() {
@@ -169,18 +93,35 @@ function loadAttendanceData() {
       { name: 'Juan Dela Cruz', rank: 'Senior Scout', attend: '95%', points: 245 },
       { name: 'Maria Santos', rank: 'Star Scout', attend: '98%', points: 312 },
       { name: 'Jose Rizal', rank: 'Explorer', attend: '87%', points: 198 },
-      { name: 'Ana Reyes', rank: 'Scribe', attend: '100%', points: 278 }
+      { name: 'Ana Reyes', rank: 'Scribe', attend: '100%', points: 278 },
+      { name: 'Carlos Mendoza', rank: 'Troop Guide', attend: '92%', points: 234 },
+      { name: 'Patricia Cruz', rank: 'Instructor', attend: '96%', points: 289 }
     ];
     
     tbody.innerHTML = sampleData.map(m => `
       <tr>
-        <td style="padding: 1rem;">${m.name}</td>
-        <td style="padding: 1rem;">${m.rank}</td>
-        <td style="padding: 1rem;">${m.attend}</td>
-        <td style="padding: 1rem;">${m.points}</td>
+        <td>${m.name}</td>
+        <td>${m.rank}</td>
+        <td>${m.attend}</td>
+        <td>${m.points}</td>
       </tr>
     `).join('');
   }
 }
 
-loadAttendanceData();
+// Close mobile menu when clicking a link
+const allNavLinks = document.querySelectorAll('.nav-links a');
+allNavLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navLinks && window.innerWidth <= 768) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
+
+// Initialize on page load
+window.addEventListener('load', () => {
+  initLightbox();
+  loadAttendanceData();
+  console.log('Outfit 306 website loaded — Laging Handa!');
+});
