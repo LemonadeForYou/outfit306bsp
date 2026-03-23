@@ -4,180 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Outfit 306BSP | Duenas General Comprehensive High School</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Design System Colors */
-        :root {
-            --scout-green: #1a3d2b;
-            --scout-gold: #c9a227;
-            --scout-cream: #f5f0e8;
-            --text-dark: #0f1f17;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--scout-cream);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--scout-green);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            color: var(--scout-gold);
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--scout-gold);
-        }
-
-        /* Hero Section */
+        /* Homepage Specific Styles */
         .hero {
             background-color: var(--scout-green);
             color: var(--white);
-            padding: 6rem 5%;
+            padding: 7rem 5%;
             text-align: center;
             border-bottom: 6px solid var(--scout-gold);
         }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--scout-gold);
-            color: var(--scout-green);
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
-        }
-
-        /* Stats Strip */
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 1.5rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.9; }
+        
         .stats-strip {
             background-color: var(--white);
             padding: 3rem 5%;
             display: flex;
             justify-content: center;
-            gap: 4rem;
+            gap: 5rem;
             flex-wrap: wrap;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2.5rem; color: var(--scout-green); font-weight: 900; display: block; }
+        .stat-label { color: #4a7c59; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
 
-        .stat-item {
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid #d6cdb8;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(26,61,43,0.1); }
+        .card h3 { color: var(--scout-green); margin-bottom: 1rem; }
+
+        .cta-band {
+            background-color: var(--scout-green);
+            color: var(--white);
             text-align: center;
+            padding: 5rem 5%;
         }
-
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--scout-green);
-            font-weight: 900;
-            display: block;
-        }
-
-        .stat-label {
-            color: #4a7c59;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Will need a hamburger menu later */
-            }
-            .stats-strip {
-                gap: 2rem;
-            }
-        }
+        .cta-band h2 { font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--scout-gold); }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">Outfit 306BSP</a>
+        <a href="index.html" class="logo">Outfit 306BSP</a>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Programs</a>
-            <a href="#">Gallery</a>
-            <a href="#">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="join.html">Join Us</a>
+            <a href="contact.html">Contact</a>
         </div>
     </nav>
 
     <section class="hero">
         <h1>Build Character.<br>Serve Others.<br>Lead with Honor.</h1>
         <p>Join Outfit 306BSP — the scouting family of Duenas General Comprehensive High School. Discover your potential today.</p>
-        <a href="#join" class="cta-button">Join Our Troop</a>
+        <a href="join.html" class="cta-button">Join Our Troop</a>
     </section>
 
-    <section class="stats-strip">
-        <div class="stat-item">
-            <span class="stat-number">120+</span>
-            <span class="stat-label">Active Scouts</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">15</span>
-            <span class="stat-label">Years Strong</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">30+</span>
-            <span class="stat-label">Annual Events</span>
+    <div class="stats-strip">
+        <div class="stat-item"><span class="stat-number">120+</span><span class="stat-label">Active Scouts</span></div>
+        <div class="stat-item"><span class="stat-number">15</span><span class="stat-label">Years Strong</span></div>
+        <div class="stat-item"><span class="stat-number">30+</span><span class="stat-label">Annual Events</span></div>
+    </div>
+
+    <section id="events">
+        <h2 class="section-title">Upcoming Activities</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Regional Jamboree</h3>
+                <p><strong>Date:</strong> October 12-15</p>
+                <p>Join us for four days of survival skills, campfires, and rank advancements at the provincial site.</p>
+            </div>
+            <div class="card">
+                <h3>Community Clean Drive</h3>
+                <p><strong>Date:</strong> November 4</p>
+                <p>Giving back to Duenas. We will be assisting the local barangay with tree planting and clearing.</p>
+            </div>
+            <div class="card">
+                <h3>First Aid Certification</h3>
+                <p><strong>Date:</strong> November 18</p>
+                <p>Essential training for all new scouts. Learn life-saving techniques from certified Red Cross personnel.</p>
+            </div>
         </div>
     </section>
+
+    <section class="cta-band">
+        <h2>Ready to be a Scout?</h2>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">Enrollment is currently open for SY 2025–2026.</p>
+        <a href="join.html" class="cta-button">Register Your Interest</a>
+    </section>
+
+    <footer>
+        <h2 style="color: var(--scout-gold); margin-bottom: 1rem;">Outfit 306BSP</h2>
+        <p>Duenas General Comprehensive High School<br>Boy Scouts of the Philippines</p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.7;">&copy; 2026 Outfit 306BSP. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
