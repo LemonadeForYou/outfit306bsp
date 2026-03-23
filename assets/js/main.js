@@ -5,21 +5,19 @@ const body = document.body;
 // Check for saved theme
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark');
-  if (darkModeToggle) darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
 }
 
-if (darkModeToggle) {
-  darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    if (body.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    } else {
-      localStorage.setItem('theme', 'light');
-      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    }
-  });
-}
+darkModeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  if (body.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    localStorage.setItem('theme', 'light');
+    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+});
 
 // Mobile Navigation Toggle
 const navToggle = document.getElementById('navToggle');
@@ -57,7 +55,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-document.querySelectorAll('.feature-card, .activity-preview-card, .officer-card, .announcement-card, .resource-card').forEach(el => {
+document.querySelectorAll('.feature-card, .activity-preview-card, .officer-card, .announcement-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
   el.style.transition = 'all 0.6s ease-out';
@@ -85,6 +83,12 @@ function initLightbox() {
   }
 }
 
+// Loading animation (optional)
+window.addEventListener('load', () => {
+  initLightbox();
+  console.log('Outfit 306 website loaded — Laging Handa!');
+});
+
 // Attendance table data simulation (for members page)
 function loadAttendanceData() {
   const tbody = document.getElementById('attendance-body');
@@ -93,9 +97,7 @@ function loadAttendanceData() {
       { name: 'Juan Dela Cruz', rank: 'Senior Scout', attend: '95%', points: 245 },
       { name: 'Maria Santos', rank: 'Star Scout', attend: '98%', points: 312 },
       { name: 'Jose Rizal', rank: 'Explorer', attend: '87%', points: 198 },
-      { name: 'Ana Reyes', rank: 'Scribe', attend: '100%', points: 278 },
-      { name: 'Carlos Mendoza', rank: 'Troop Guide', attend: '92%', points: 234 },
-      { name: 'Patricia Cruz', rank: 'Instructor', attend: '96%', points: 289 }
+      { name: 'Ana Reyes', rank: 'Scribe', attend: '100%', points: 278 }
     ];
     
     tbody.innerHTML = sampleData.map(m => `
@@ -109,19 +111,4 @@ function loadAttendanceData() {
   }
 }
 
-// Close mobile menu when clicking a link
-const allNavLinks = document.querySelectorAll('.nav-links a');
-allNavLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    if (navLinks && window.innerWidth <= 768) {
-      navLinks.classList.remove('active');
-    }
-  });
-});
-
-// Initialize on page load
-window.addEventListener('load', () => {
-  initLightbox();
-  loadAttendanceData();
-  console.log('Outfit 306 website loaded — Laging Handa!');
-});
+loadAttendanceData();
