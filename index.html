@@ -23,15 +23,31 @@
         <li><a href="resources.html">Resources</a></li>
         <li><a href="members.html">Members</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle"><i class="fas fa-moon"></i></button></li>
+        <li>
+          <div class="theme-controls">
+            <button id="darkModeToggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+            <div class="color-picker-wrapper">
+              <button id="colorPickerBtn" class="theme-toggle-btn"><i class="fas fa-palette"></i></button>
+              <div class="color-picker-dropdown" id="colorPickerDropdown">
+                <div class="color-option" data-color="green" style="background: #1e6f3f;"></div>
+                <div class="color-option" data-color="blue" style="background: #1e6f9f;"></div>
+                <div class="color-option" data-color="red" style="background: #c73d2f;"></div>
+                <div class="color-option" data-color="purple" style="background: #7c3aed;"></div>
+                <div class="color-option" data-color="orange" style="background: #ea580c;"></div>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
 
   <main>
-    <!-- HERO SECTION - All elements inside container -->
-    <section class="hero" style="background-image: linear-gradient(135deg, rgba(30,111,63,0.85), rgba(15,74,42,0.9)), url('https://images.pexels.com/photos/957840/pexels-photo-957840.jpeg?auto=compress&cs=tinysrgb&w=1600'); background-size: cover; background-position: center 30%;">
-      <div class="container">
+    <!-- HERO SECTION - Fixed with proper container -->
+    <section class="hero" id="heroSection">
+      <div class="hero-overlay"></div>
+      <div class="hero-bg-image"></div>
+      <div class="container hero-container">
         <div class="hero-content">
           <div class="hero-badge">
             ⚜️ BSP | Dueñas General Comprehensive High School
