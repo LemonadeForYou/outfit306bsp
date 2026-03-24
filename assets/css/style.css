@@ -1,9 +1,11 @@
 /* ===== GLOBAL RESET & VARIABLES ===== */
 :root {
-  --primary: #2563eb;
-  --primary-dark: #1d4ed8;
-  --primary-light: #3b82f6;
-  --secondary: #f59e0b;
+  --primary: #0038A8;
+  --primary-dark: #002c87;
+  --primary-light: #1a4cb3;
+  --secondary: #CE1126;
+  --secondary-light: #e31c33;
+  --accent: #FCD116;
   --dark: #111827;
   --gray-dark: #1f2937;
   --gray: #6b7280;
@@ -218,7 +220,7 @@ body.dark .navbar {
   opacity: 0.9;
 }
 
-/* ===== MOTTO SECTION - NO OVERLAP, PROPER SPACING ===== */
+/* ===== MOTTO SECTION ===== */
 .motto-section {
   padding: 4rem 0;
   background: var(--gray-light);
@@ -259,7 +261,7 @@ body.dark .navbar {
 
 .section-tag {
   display: inline-block;
-  background: var(--primary-light);
+  background: var(--primary);
   color: white;
   padding: 0.25rem 1rem;
   border-radius: 2rem;
@@ -653,7 +655,7 @@ body.dark .navbar {
 
 /* Page Headers */
 .page-header {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   padding: 3rem 0;
   text-align: center;
@@ -740,7 +742,7 @@ body.dark .navbar {
 }
 
 .footer a:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 .footer-links ul {
