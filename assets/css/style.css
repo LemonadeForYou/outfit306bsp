@@ -218,7 +218,7 @@ body.dark .navbar {
   opacity: 0.9;
 }
 
-/* ===== MOTTO SECTION - NO OVERLAP, PROPER SPACING ===== */
+/* ===== MOTTO SECTION - MATCHING FEATURE CARDS ===== */
 .motto-section {
   padding: 4rem 0;
   background: var(--gray-light);
@@ -227,22 +227,21 @@ body.dark .navbar {
 .motto-card {
   text-align: center;
   background: var(--white);
-  box-shadow: var(--shadow-lg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   max-width: 600px;
   margin: 0 auto;
-  border-radius: var(--radius);
-  padding: 2rem;
-  transition: var(--transition);
 }
 
 .motto-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
 }
 
 .motto-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
   margin-bottom: 1rem;
   display: inline-block;
 }
@@ -250,8 +249,12 @@ body.dark .navbar {
 .motto-text {
   font-size: 2rem;
   font-weight: 700;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
   color: var(--primary);
+}
+
+.motto-card h2 {
+  margin-bottom: 0.5rem;
 }
 
 /* ===== SECTIONS ===== */
@@ -380,6 +383,7 @@ body.dark .navbar {
   border-radius: var(--radius);
   min-width: 180px;
   transition: var(--transition);
+  box-shadow: var(--shadow-sm);
 }
 
 .officer-mini-card:hover {
