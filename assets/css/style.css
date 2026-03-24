@@ -1,105 +1,880 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outfit 306 | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="index.html" class="logo">⚜️ Outfit 306</a>
-      <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="officers.html">Officers</a></li>
-        <li><a href="activities.html">Activities</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="announcements.html">Announcements</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button id="darkModeToggle" class="dark-toggle"><i class="fas fa-moon"></i></button></li>
-      </ul>
-    </div>
-  </nav>
+/* ===== GLOBAL RESET & VARIABLES ===== */
+:root {
+  --primary: #1e6f3f;
+  --primary-dark: #0f4a2a;
+  --primary-light: #2d8a4f;
+  --secondary: #f4b942;
+  --dark: #111827;
+  --gray-dark: #1f2937;
+  --gray: #6b7280;
+  --gray-light: #f3f4f6;
+  --white: #ffffff;
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+  --radius: 1rem;
+  --radius-lg: 1.5rem;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  <main>
-    <section class="hero" style="background-image: linear-gradient(135deg, rgba(30,111,63,0.85), rgba(15,74,42,0.9)), url('images/mainbackground.png'); background-size: cover; background-position: center;">
-      <div class="container hero-content">
-        <div class="hero-badge">⚜️ BSP | Dueñas General Comprehensive High School</div>
-        <h1 class="hero-title">Outfit 306 – Boy Scouts of the Philippines</h1>
-        <p class="hero-subtitle">Building leadership, discipline, and service in the community.</p>
-        <div class="hero-buttons">
-          <a href="activities.html" class="btn btn-primary"><i class="fas fa-campground"></i> Explore Activities</a>
-          <a href="contact.html" class="btn btn-outline"><i class="fas fa-user-plus"></i> Join Us</a>
-        </div>
-      </div>
-    </section>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <section class="motto-section">
-      <div class="container motto-container">
-        <div class="motto-card">
-          <div style="margin-bottom: 0.5rem;">
-            <img src="images/scout_sign.png" alt="Scout Sign" style="width: 100px; height: 100px; object-fit: contain; display: block; margin: 0 auto;">
-          </div>
-          <h2 style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Scout Motto</h2>
-          <p class="motto-text" style="margin-top: 0.25rem;">Laging Handa</p>
-        </div>
-      </div>
-    </section>
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
 
-    <section class="features">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Core Values</span>
-          <h2>Shaping tomorrow's leaders</h2>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card"><div class="feature-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Leadership</h3><p>Empowering scouts to take initiative and lead with integrity.</p></div>
-          <div class="feature-card"><div class="feature-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>Service</h3><p>Community outreach, environmental projects, and nation-building.</p></div>
-          <div class="feature-card"><div class="feature-icon"><i class="fas fa-brain"></i></div><h3>Discipline</h3><p>Honoring the Scout Oath, accountability, and growth.</p></div>
-        </div>
-      </div>
-    </section>
+/* Dark Mode */
+body.dark {
+  --white: #0a0f1a;
+  --dark: #f9fafb;
+  --gray-light: #1f2937;
+  --gray: #9ca3af;
+  background: #0a0f1a;
+  color: #f9fafb;
+}
 
-    <section class="preview-activities">
-      <div class="container">
-        <div class="section-header"><span class="section-tag">Recent Highlights</span><h2>Adventures & Training</h2></div>
-        <div class="activity-cards-grid">
-          <div class="activity-preview-card"><div class="card-img" style="background-image: url('https://images.pexels.com/photos/1061287/pexels-photo-1061287.jpeg?auto=compress&cs=tinysrgb&w=600');"></div><div class="card-content"><h3>Jamboree 2024</h3><p>Regional camping & skill competitions.</p><a href="activities.html" class="card-link">Learn more →</a></div></div>
-          <div class="activity-preview-card"><div class="card-img" style="background-image: url('https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=600');"></div><div class="card-content"><h3>Community Cleanup</h3><p>Environmental service drive.</p><a href="activities.html" class="card-link">Learn more →</a></div></div>
-          <div class="activity-preview-card"><div class="card-img" style="background-image: url('https://images.pexels.com/photos/7714054/pexels-photo-7714054.jpeg?auto=compress&cs=tinysrgb&w=600');"></div><div class="card-content"><h3>First Aid Seminar</h3><p>Lifesaving skills training.</p><a href="activities.html" class="card-link">Learn more →</a></div></div>
-        </div>
-      </div>
-    </section>
+body.dark .glass-card,
+body.dark .feature-card,
+body.dark .activity-preview-card,
+body.dark .officer-card,
+body.dark .announcement-card,
+body.dark .resource-card,
+body.dark .contact-card,
+body.dark .leaderboard-card,
+body.dark .attendance-table,
+body.dark .event-item,
+body.dark .form-card,
+body.dark .motto-card {
+  background: rgba(31, 41, 55, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    <section class="officers-preview">
-      <div class="container"><div class="section-header"><span class="section-tag">Troop Leadership</span><h2>Meet Our Officers</h2></div>
-        <div class="preview-officers-grid">
-          <div class="officer-mini-card"><div class="officer-avatar"><i class="fas fa-user-circle fa-3x"></i></div><h4>Juan Dela Cruz</h4><p>Senior Scout Leader</p></div>
-          <div class="officer-mini-card"><div class="officer-avatar"><i class="fas fa-user-circle fa-3x"></i></div><h4>Maria Santos</h4><p>Asst. Senior Scout Leader</p></div>
-          <div class="officer-mini-card"><div class="officer-avatar"><i class="fas fa-user-circle fa-3x"></i></div><h4>Jose Rizal</h4><p>Quartermaster</p></div>
-          <div class="officer-mini-card"><div class="officer-avatar"><i class="fas fa-user-circle fa-3x"></i></div><h4>Ana Reyes</h4><p>Scribe</p></div>
-        </div>
-        <div class="text-center mt-4"><a href="officers.html" class="btn btn-outline">View full roster →</a></div>
-      </div>
-    </section>
-  </main>
+body.dark .attendance-table td,
+body.dark .attendance-table th {
+  border-color: rgba(255, 255, 255, 0.1);
+}
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand"><h3>⚜️ Outfit 306</h3><p>Boy Scouts of the Philippines<br>Dueñas General Comprehensive High School</p></div>
-      <div class="footer-links"><h4>Quick</h4><ul><li><a href="about.html">About</a></li><li><a href="officers.html">Officers</a></li><li><a href="activities.html">Activities</a></li><li><a href="announcements.html">Announcements</a></li></ul></div>
-      <div class="footer-links"><h4>Resources</h4><ul><li><a href="resources.html">Manuals & Guides</a></li><li><a href="members.html">Members Portal</a></li><li><a href="gallery.html">Gallery</a></li></ul></div>
-      <div class="footer-social"><h4>Connect</h4><div class="social-icons"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="mailto:outfit306@dgchs.edu.ph"><i class="fas fa-envelope"></i></a></div></div>
-    </div>
-    <div class="footer-bottom"><p>© 2025 Outfit 306 – BSP | Laging Handa</p></div>
-  </footer>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+body.dark .navbar {
+  background: rgba(10, 15, 26, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--dark);
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  min-height: auto;
+  padding: 4rem 0 5rem 0;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  color: white;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin-top: 1rem;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ===== MOTTO SECTION - NO OVERLAP, PROPER SPACING ===== */
+.motto-section {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.motto-card {
+  text-align: center;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.motto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.motto-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.motto-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--primary);
+}
+
+/* ===== SECTIONS ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Features Grid */
+.features {
+  padding: 4rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Activity Cards */
+.preview-activities {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.activity-cards-grid,
+.officers-grid,
+.gallery-grid,
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.activity-preview-card,
+.officer-card,
+.resource-card,
+.announcement-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.activity-preview-card:hover,
+.officer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* Officers Preview */
+.officers-preview {
+  padding: 4rem 0;
+}
+
+.preview-officers-grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.officer-mini-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  min-width: 180px;
+  transition: var(--transition);
+}
+
+.officer-mini-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.officer-avatar {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* Officers Page */
+.officers-section {
+  padding: 4rem 0;
+}
+
+.officer-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Gallery Grid */
+.gallery-section {
+  padding: 4rem 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: var(--radius);
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: var(--radius);
+}
+
+/* Announcements */
+.announcements-section {
+  padding: 4rem 0;
+}
+
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.announcement-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.announcement-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.date-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Events */
+.upcoming-events {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.event-item {
+  display: flex;
+  gap: 1rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  align-items: center;
+  flex-wrap: wrap;
+  transition: var(--transition);
+}
+
+.event-item:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.event-date {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  min-width: 100px;
+}
+
+/* Resources */
+.resources-section {
+  padding: 4rem 0;
+}
+
+.resource-card ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.resource-card li {
+  margin: 0.75rem 0;
+}
+
+.resource-card a {
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-card a:hover {
+  text-decoration: underline;
+}
+
+/* Contact */
+.contact-section {
+  padding: 4rem 0;
+}
+
+.contact-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.form-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+}
+
+/* Members Dashboard */
+.dashboard-section {
+  padding: 4rem 0;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.attendance-section,
+.leaderboard-section {
+  margin-bottom: 3rem;
+}
+
+.attendance-section h2,
+.leaderboard-section h2 {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.attendance-table th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.leaderboard-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: var(--transition);
+}
+
+.leaderboard-card:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Page Headers */
+.page-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* About Page */
+.about-section {
+  padding: 4rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.mission-card,
+.vision-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.oath-box {
+  background: var(--gray-light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  margin-bottom: 2rem;
+}
+
+.law-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.law-item {
+  padding: 1rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.law-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Footer */
+.footer {
+  background: var(--gray-dark);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--secondary);
+}
+
+.footer-links ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: var(--shadow-md);
+  }
+  
+  body.dark .nav-links {
+    background: var(--gray-dark);
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .hero {
+    padding: 2rem 0 3rem 0;
+  }
+  
+  .event-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .announcement-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .date-badge {
+    align-self: center;
+  }
+  
+  .preview-officers-grid {
+    gap: 1rem;
+  }
+  
+  .officer-mini-card {
+    min-width: 150px;
+  }
+  
+  .motto-text {
+    font-size: 1.5rem;
+  }
+  
+  .motto-section {
+    padding: 3rem 0;
+  }
+}
