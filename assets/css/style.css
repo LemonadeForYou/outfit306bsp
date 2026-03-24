@@ -52,7 +52,8 @@ body.dark .contact-card,
 body.dark .leaderboard-card,
 body.dark .attendance-table,
 body.dark .event-item,
-body.dark .form-card {
+body.dark .form-card,
+body.dark .motto-card {
   background: rgba(31, 41, 55, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -176,7 +177,7 @@ body.dark .navbar {
   transform: translateY(-2px);
 }
 
-/* ===== HERO SECTION - FIXED TO TOP, NOT FULL SCREEN ===== */
+/* ===== HERO SECTION ===== */
 .hero {
   min-height: auto;
   padding: 4rem 0 5rem 0;
@@ -215,6 +216,42 @@ body.dark .navbar {
   font-size: 1.25rem;
   margin-bottom: 2rem;
   opacity: 0.9;
+}
+
+/* ===== MOTTO SECTION - NO OVERLAP, PROPER SPACING ===== */
+.motto-section {
+  padding: 4rem 0;
+  background: var(--gray-light);
+}
+
+.motto-card {
+  text-align: center;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.motto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.motto-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.motto-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--primary);
 }
 
 /* ===== SECTIONS ===== */
@@ -630,36 +667,6 @@ body.dark .navbar {
   margin-bottom: 0.5rem;
 }
 
-/* Motto Section */
-.motto-section {
-  margin: -2rem auto 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.motto-card {
-  text-align: center;
-  background: var(--white);
-  box-shadow: var(--shadow-lg);
-  max-width: 600px;
-  margin: 0 auto;
-  border-radius: var(--radius);
-  padding: 2rem;
-}
-
-.motto-icon {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-  display: inline-block;
-}
-
-.motto-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 1rem 0;
-}
-
 /* About Page */
 .about-section {
   padding: 4rem 0;
@@ -861,5 +868,13 @@ body.dark .navbar {
   
   .officer-mini-card {
     min-width: 150px;
+  }
+  
+  .motto-text {
+    font-size: 1.5rem;
+  }
+  
+  .motto-section {
+    padding: 3rem 0;
   }
 }
