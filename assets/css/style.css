@@ -6,6 +6,7 @@
   --secondary: #CE1126;
   --secondary-light: #e31c33;
   --accent: #FCD116;
+  --accent-dark: #e6bc14;
   --dark: #111827;
   --gray-dark: #1f2937;
   --gray: #6b7280;
@@ -120,7 +121,7 @@ body.dark .navbar {
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .dark-toggle {
@@ -132,6 +133,10 @@ body.dark .navbar {
   padding: 0.5rem;
   border-radius: 50%;
   transition: var(--transition);
+}
+
+.dark-toggle:hover {
+  color: var(--accent);
 }
 
 .nav-toggle {
@@ -156,26 +161,27 @@ body.dark .navbar {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
+  background: var(--accent-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  color: var(--primary-dark);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
+  border: 2px solid var(--accent);
+  color: var(--accent);
 }
 
 .btn-outline:hover {
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   transform: translateY(-2px);
 }
 
@@ -261,8 +267,8 @@ body.dark .navbar {
 
 .section-tag {
   display: inline-block;
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   padding: 0.25rem 1rem;
   border-radius: 2rem;
   font-size: 0.85rem;
@@ -304,7 +310,7 @@ body.dark .navbar {
 
 .feature-icon {
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -352,11 +358,15 @@ body.dark .navbar {
 }
 
 .card-link {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
   margin-top: 1rem;
+}
+
+.card-link:hover {
+  color: var(--accent-dark);
 }
 
 /* Officers Preview */
@@ -388,7 +398,7 @@ body.dark .navbar {
 
 .officer-avatar {
   font-size: 3rem;
-  color: var(--primary);
+  color: var(--accent);
   margin-bottom: 1rem;
 }
 
@@ -483,12 +493,13 @@ body.dark .navbar {
 }
 
 .date-badge {
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   text-align: center;
   min-width: 80px;
+  font-weight: 600;
 }
 
 /* Events */
@@ -520,12 +531,13 @@ body.dark .navbar {
 }
 
 .event-date {
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   padding: 1rem;
   border-radius: var(--radius);
   text-align: center;
   min-width: 100px;
+  font-weight: 600;
 }
 
 /* Resources */
@@ -543,7 +555,7 @@ body.dark .navbar {
 }
 
 .resource-card a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -551,6 +563,7 @@ body.dark .navbar {
 }
 
 .resource-card a:hover {
+  color: var(--accent-dark);
   text-decoration: underline;
 }
 
@@ -592,7 +605,7 @@ body.dark .navbar {
 }
 
 .stat-card {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
   padding: 1.5rem;
   border-radius: var(--radius);
@@ -633,8 +646,8 @@ body.dark .navbar {
 }
 
 .attendance-table th {
-  background: var(--primary);
-  color: white;
+  background: var(--accent);
+  color: var(--primary-dark);
   font-weight: 600;
 }
 
